@@ -1,0 +1,15 @@
+*.aux
+*.log
+*.class
+*.ser
+.DS_Store
+*.DS_Store
+*.classpath
+*.pdf
+*.synctex.gz
+*.clover
+*.css
+8.Hangman-Java/.idea/misc.xml
+*.gif
+*.html
+*.out

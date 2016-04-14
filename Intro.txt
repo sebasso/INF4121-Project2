@@ -1,0 +1,23 @@
+
+
+
+
+
+
+
+
+
+
+
+
+1. Skrive manuelle og automatiske tester for nettsiden.
+2. Kun funksjonelle tester- Black box/experience based test design
+3. Exhaustive testing!
+4. Explain why not all manual tests can be automated
+- Use SELENIUM IDE
+
+Testing technique - Dynamic technique
+	- http://istqbexamcertification.com/what-are-the-categories-of-test-design-techniques/
+
+manual vs autmated:
+http://www.base36.com/2013/03/automated-vs-manual-testing-the-pros-and-cons-of-each/
