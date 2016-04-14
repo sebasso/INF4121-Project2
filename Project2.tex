@@ -34,7 +34,7 @@ Dynamic Technique - blacbox/experience based testing
 \item
 \begin{figure}[!h]
 \centering
-\includegraphics[scale=0.7,keepaspectratio]{Images/CreateAccount.png}
+\includegraphics[scale=0.65,keepaspectratio]{Images/CreateAccount.png}
 \caption{Create account state diagram}
 \end{figure}
 \newpage
@@ -117,13 +117,18 @@ Dynamic Technique - blacbox/experience based testing
 %post condition vs expected results: http://www.klaros-testmanagement.com/en/forum/-/message_boards/message/144168
 
 
-\item
-This one builds on the previous state diagram \textbf{Select Products}\newline
+\item % basically this test case and diagram shall cover 3-5
+\begin{figure}[!h]
+\centering
+\includegraphics[scale=0.60,keepaspectratio]{Images/BuyProductsandChangeCart.png}
+\caption{Shopping cart, change quantity and finalize}
+\end{figure}
+
 \textbf{\hspace{0.3cm}Type\hspace{4.4cm} Description}
 \newline \vspace{0.2cm}
 \begin{tabular}{| p{5cm} | p{10cm} | }
 	\hline
-	 \textbf{Title} & Checkout and Quantity \\ \hline
+	 \textbf{Title} & Checkout, products quantity, add/remove, finalizing and logout \\ \hline
 	 \textbf{Objective} & Test that the cart indeed contains the chosen products after shopping session \\ \hline
 	 \textbf{Pre-conditions} & Avactis user account and a cart of products \\ \hline
 	 \textbf{Steps} & \begin{enumerate} \item Click View cart \item Change items quantity \item Click checkout \item Fill in Billing \& shipping address and click continue checkout \item Select Billing and delivery options \item Click place order
@@ -136,14 +141,20 @@ This one builds on the previous state diagram \textbf{Select Products}\newline
 
 
 \item
+\begin{figure}[!h]
+\centering
+\includegraphics[scale=0.8,keepaspectratio]{Images/Logout.png}
+\caption{Logout}
+\end{figure}
+
 \textbf{\hspace{0.3cm}Type\hspace{4.4cm} Description}
 \newline \vspace{0.2cm}
 \begin{tabular}{| p{5cm} | p{10cm} | }
 	\hline
-	 \textbf{Title} & \\ \hline
-	 \textbf{Objective} & \\ \hline
-	 \textbf{Pre-conditions} & \\ \hline
-	 \textbf{Steps} & \\ \hline
+	 \textbf{Title} & Logout \\ \hline
+	 \textbf{Objective} & To log out of Avactis webstore \\ \hline
+	 \textbf{Pre-conditions} & A user account \\ \hline
+	 \textbf{Steps} & \begin{enumerate} \item Go to Avactis homepage and click sign in \item Enter password and username \item click logout  \end{enumerate}\\ \hline
 	 \textbf{Post-conditions} & \\ \hline
 	 \textbf{Expected results} & \\ 
 	 \hline
@@ -152,6 +163,19 @@ This one builds on the previous state diagram \textbf{Select Products}\newline
 
 
 
+\item
+\textbf{\hspace{0.3cm}Type\hspace{4.4cm} Description}
+\newline \vspace{0.2cm}
+\begin{tabular}{| p{5cm} | p{10cm} | }
+	\hline
+	 \textbf{Title} & \\ \hline
+	 \textbf{Objective} & \\ \hline
+	 \textbf{Pre-conditions} & \\ \hline
+	 \textbf{Steps} & \begin{enumerate} \item 1 \end{enumerate} \\ \hline
+	 \textbf{Post-conditions} & \\ \hline
+	 \textbf{Expected results} & \\ 
+	 \hline
+\end{tabular} % & \\ \hline
 
 
 
