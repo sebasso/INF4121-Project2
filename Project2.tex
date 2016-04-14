@@ -15,7 +15,7 @@
 \usepackage{bookmark}
 
 
-\title{Project 2 \\ Report \\ INF4121/3121} % Title
+\title{Project 2 - Report - INF4121/3121} % Title
 \date{\today} % Date for the report
 \author{Sebasting Søberg(INF4121) \& Thomas Oddsund(INF3121)}
 
@@ -23,19 +23,23 @@
 \renewcommand{\labelenumii}{\theenumii}
 \renewcommand{\theenumii}{\arabic{enumii}.}
 
+%post condition vs expected results: http://www.klaros-testmanagement.com/en/forum/-/message_boards/message/144168
+
+
 
 \begin{document}
 \maketitle % Insert the title, author and date
 
 \section{Requirement 1}
 \subsection{Test cases}
-Dynamic Technique - blacbox/experience based testing
+We use state diagram to describe every use-case. When analyzing the use cases we assume that all the observable results relate to the demo store, and for that reason every time a user gets an email it's under Expected results instead of post-conditions.
+
 \begin{enumerate}%all manual test cases
 \item
 \begin{figure}[!h]
 \centering
-\includegraphics[scale=0.6,keepaspectratio]{Images/CreateAccount.png}
-\caption{Create account state diagram}
+\includegraphics[scale=0.7,keepaspectratio]{Images/CreateAccount.png}
+\caption{Create Account}
 \end{figure}
 \newpage
 \textbf{\hspace{0.3cm}Type\hspace{4.4cm} Description}
@@ -44,31 +48,31 @@ Dynamic Technique - blacbox/experience based testing
 	\hline
 	 Title & Create account\\ \hline
 	 Objective & To create a valid account that can be used for online shopping on \href{http://demo.avactis.com/4.7.9/}{\textbf{this site}.} \\ \hline
-	 Pre-conditions & User have Email\\ \hline
-	 Steps & \begin{enumerate} \item User opens browser \item User goes to Avactis shopping site \item User clicks \textit{My account or  Sign in} in the top right corner. \item User clicks register \item User fills in necessary information and clicks register after.\end{enumerate} \\ \hline
-	 Post-conditions & \begin{enumerate} \item Website says the following in a green field: \textit{Account created successfully. You are now registered.} \item A user gets a verification email about the account registration\end{enumerate}\\ \hline
-	 Expected results & User registered in avactis user database.\\ 
+	 Pre-conditions & User has Email\\ \hline
+	 Steps & \begin{enumerate} \item User goes to Avactis shopping site \item User clicks \textit{My account or  Sign in} in the top right corner. \item User clicks register \item User fills in necessary information and clicks register after.\end{enumerate} \\ \hline
+	 Post-conditions & \begin{enumerate} \item Website says the following in a green field: \textit{Account created successfully. You are now registered.} \item \textit{Sign in} changes to \textit{sign out} \end{enumerate}\\ \hline
+	 Expected results & \begin{enumerate} \item User registered in avactis user database. \item User gets a verification email \item User is now logged in \end{enumerate}\\ 
 	 \hline
 \end{tabular} % & \\ \hline
 
 \item
-%Dette diagrammet er egentlig et activity diagram, er kanskje ikke lov?
 \begin{figure}[!h]
 \centering
 \includegraphics[scale=0.7,keepaspectratio]{Images/Login.png}
 \caption{Login}
 \end{figure}
 
+\newpage
 \textbf{\hspace{0.3cm}Type\hspace{4.4cm} Description}
 \newline \vspace{0.2cm}
 \begin{tabular}{| p{5cm} | p{10cm} | }
 	\hline
 	 \textbf{Title} & Logging in\\ \hline
 	 \textbf{Objective} & To verify that a user is registered by logging in\\ \hline
-	 \textbf{Pre-conditions} & The user have a valid account\\ \hline
+	 \textbf{Pre-conditions} & The user has a valid account\\ \hline
 	 \textbf{Steps} & \begin{enumerate} \item A user opens a browser and goes to the website \item A user clicks \textit{sign in/my account} in the top right corner. \item The user fills in login details and clicks sign in \end{enumerate} \\ \hline
-	 \textbf{Post-conditions} & \begin{enumerate} \item The user has an ongoing session with the shopping website \item The \textit{My Account} page loads \end{enumerate} \\ \hline
-	 \textbf{Expected results} &  The user succesfully logs in and the website changes from the title \textit{sign in} in the top right corner to \textit{sign out} which indicates that you have an active session and succesfully logged in.\\ 
+	 \textbf{Post-conditions} & \begin{enumerate} \item The user has an ongoing session with the shopping website \item The \textit{My Account} page is loaded \item the website changes from the title \textit{sign in} in the top right corner to \textit{sign out} \end{enumerate} \\ \hline
+	 \textbf{Expected results} & The user has an active session  \\ 
 	 \hline
 \end{tabular} % & \\ \hline
 
@@ -88,12 +92,12 @@ Dynamic Technique - blacbox/experience based testing
 	 \textbf{Objective} & To change or alter you password\\ \hline
 	 \textbf{Pre-conditions} & A user account on avactis website\\ \hline
 	 \textbf{Steps} & \begin{enumerate} \item A user opens a browser and goes to the avactis site \item The user clicks \textit{My account or Sign in} \item The under the login fields the user press the link \textit{Forgot your password?} \item The user then enters their email and click continue \item The user then clicks on the reset link in their email \item Finally the user enter their new passord \end{enumerate} \\ \hline
-	 \textbf{Post-conditions} & New password to user account\\ \hline
-	 \textbf{Expected results} & A user's password is updated to something new \\ 
+	 \textbf{Post-conditions} & \begin{enumerate} \item A message pops up in green with: \textit{Your password has been reset. Further instructions have been sent to the e-mail address you provided during registration.} \item After entering a new password \textit{Password saved successfully.} pops up \end{enumerate}\\ \hline
+	 \textbf{Expected results} & \begin{enumerate} \item User gets email with link to change password. \item User has a active session after entering new password \end{enumerate} \\ 
 	 \hline
 \end{tabular} % & \\ \hline
 
-
+%\begin{enumerate} \end{enumerate}
 \item
 \begin{figure}[!h]
 \centering
@@ -107,38 +111,38 @@ Dynamic Technique - blacbox/experience based testing
 	\hline
 	 \textbf{Title} & Select Products \\ \hline
 	 \textbf{Objective} & Put different products in the cart and manage the quantity of each item \\ \hline
-	 \textbf{Pre-conditions} & Avactis user account \\ \hline
+	 \textbf{Pre-conditions} & User has avactis account \\ \hline
 	 \textbf{Steps} & \begin{enumerate} \item Go to main page and click \textit{Sign in/My Account} \item Fill in username and password and click sign in \item Select categories to shop from \item Select one or more products and their quantity.
 	 \end{enumerate} \\ \hline
-	 \textbf{Post-conditions} & Cart contains products \\ \hline
+	 \textbf{Post-conditions} & \begin{enumerate} \item Item and price counter changes \item Cart contains products \end{enumerate}  \\ \hline
 	 \textbf{Expected results} & Cart contains products \\ 
 	 \hline
 \end{tabular} % & \\ \hline
-%post condition vs expected results: http://www.klaros-testmanagement.com/en/forum/-/message_boards/message/144168
+
 
 
 \item % basically this test case and diagram shall cover 3-5
 \begin{figure}[!h]
 \centering
 \includegraphics[scale=0.60,keepaspectratio]{Images/BuyProductsandChangeCart.png}
-\caption{Shopping cart, change quantity and finalize}
+\caption{Manage shopping cart, change quantity and place order}
 \end{figure}
 \newpage
 \textbf{\hspace{0.3cm}Type\hspace{4.4cm} Description}
 \newline \vspace{0.2cm}
 \begin{tabular}{| p{5cm} | p{10cm} | }
 	\hline
-	 \textbf{Title} & Checkout, products quantity, add/remove, finalizing and logout \\ \hline
+	 \textbf{Title} & Shopping cart management, Checkout, products quantity, add/remove items and purchasing \\ \hline
 	 \textbf{Objective} & Test that the cart indeed contains the chosen products after shopping session \\ \hline
 	 \textbf{Pre-conditions} & Avactis user account and a cart of products \\ \hline
 	 \textbf{Steps} & \begin{enumerate} \item Click View cart \item Change items quantity \item Click checkout \item Fill in Billing \& shipping address and click continue checkout \item Select Billing and delivery options \item Click place order
 	 \end{enumerate} \\ \hline
-	 \textbf{Post-conditions} & \\ \hline
-	 \textbf{Expected results} & \\ 
+	\textbf{Post-conditions} & \begin{enumerate}\item Item and price counter changes \item Website states goes to order confirmation page \item Webpage with following message: \textit{Your order is placed. Order ID: \#00001 Order details have been sent to your e-mail address.}  \end{enumerate} \\ \hline
+	 \textbf{Expected results} & \begin{enumerate}\item Users gets order confirmation mail \item Cart is empty \item Item and money counter is zero initialized \end{enumerate}\\ 
 	 \hline
 \end{tabular} % & \\ \hline
 
-
+%TODO: Include x button right from shopping draw menu in cart "menu"
 
 \item
 \begin{figure}[!h]
@@ -155,8 +159,8 @@ Dynamic Technique - blacbox/experience based testing
 	 \textbf{Objective} & To log out of Avactis webstore \\ \hline
 	 \textbf{Pre-conditions} & A user account \\ \hline
 	 \textbf{Steps} & \begin{enumerate} \item Go to Avactis homepage and click sign in \item Enter password and username \item click logout  \end{enumerate}\\ \hline
-	 \textbf{Post-conditions} & \\ \hline
-	 \textbf{Expected results} & \\ 
+	 \textbf{Post-conditions} & \begin{enumerate}\item\textit{Sign in} changes to \textit{sign out} \item The active session is ended on the website \end{enumerate}  \\ \hline
+	 \textbf{Expected results} & The user is logged out\\ 
 	 \hline
 \end{tabular} % & \\ \hline
 
@@ -183,7 +187,7 @@ Dynamic Technique - blacbox/experience based testing
 \end{enumerate}
 
 \subsection{Error finding and reporting}
-When logged timed out you need to re-register your account.
+User account gets deleted after some hours of inactivity.
 
 
 
