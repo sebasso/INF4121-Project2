@@ -13,7 +13,7 @@
 %\usepackage{bookmark} %also loads package{hyperref}
 %removes: Package rerunfile check Warning: File `Essay.out' has changed.
 \usepackage{bookmark}
-
+\usepackage{float}
 
 \title{Project 2 - Report - INF4121/3121} % Title
 \date{\today} % Date for the report
@@ -36,11 +36,12 @@ We use state diagram to describe every use-case. When analyzing the use cases we
 
 \begin{enumerate}%all manual test cases
 \item
-\begin{figure}[!h]
+\begin{figure}[H]
 \centering
 \includegraphics[scale=0.7,keepaspectratio]{Images/CreateAccount.png}
 \caption{Create Account}
 \end{figure}
+
 \newpage
 \textbf{\hspace{0.3cm}Type\hspace{4.4cm} Description}
 \newline \vspace{0.2cm}
@@ -56,13 +57,13 @@ We use state diagram to describe every use-case. When analyzing the use cases we
 \end{tabular} % & \\ \hline
 
 \item
-\begin{figure}[!h]
+\begin{figure}[H]
 \centering
 \includegraphics[scale=0.7,keepaspectratio]{Images/Login.png}
 \caption{Login}
 \end{figure}
 
-\newpage
+
 \textbf{\hspace{0.3cm}Type\hspace{4.4cm} Description}
 \newline \vspace{0.2cm}
 \begin{tabular}{| p{5cm} | p{10cm} | }
@@ -78,11 +79,12 @@ We use state diagram to describe every use-case. When analyzing the use cases we
 
 
 \item
-\begin{figure}[!h]
+\begin{figure}[H]
 \centering
 \includegraphics[scale=0.7,keepaspectratio]{Images/ResetPassword.png}
-\caption{Login}
+\caption{Reset Password}
 \end{figure}
+
 \newpage
 \textbf{\hspace{0.3cm}Type\hspace{4.4cm} Description}
 \newline \vspace{0.2cm}
@@ -99,12 +101,12 @@ We use state diagram to describe every use-case. When analyzing the use cases we
 
 %\begin{enumerate} \end{enumerate}
 \item
-\begin{figure}[!h]
+\begin{figure}[H]
 \centering
 \includegraphics[scale=0.7,keepaspectratio]{Images/SelectProducts.png}
-\caption{Login}
+\caption{Select Products}
 \end{figure}
-\newpage
+
 \textbf{\hspace{0.3cm}Type\hspace{4.4cm} Description}
 \newline \vspace{0.2cm}
 \begin{tabular}{| p{5cm} | p{10cm} | }
@@ -122,11 +124,12 @@ We use state diagram to describe every use-case. When analyzing the use cases we
 
 
 \item % basically this test case and diagram shall cover 3-5
-\begin{figure}[!h]
+\begin{figure}[H]
 \centering
 \includegraphics[scale=0.60,keepaspectratio]{Images/BuyProductsandChangeCart.png}
 \caption{Manage shopping cart, change quantity and place order}
 \end{figure}
+
 \newpage
 \textbf{\hspace{0.3cm}Type\hspace{4.4cm} Description}
 \newline \vspace{0.2cm}
@@ -145,12 +148,12 @@ We use state diagram to describe every use-case. When analyzing the use cases we
 %TODO: Include x button right from shopping draw menu in cart "menu"
 
 \item
-\begin{figure}[!h]
+\begin{figure}[H]
 \centering
-\includegraphics[scale=0.8,keepaspectratio]{Images/Logout.png}
+\includegraphics[scale=0.6,keepaspectratio]{Images/Logout.png}
 \caption{Logout}
 \end{figure}
-\newpage
+
 \textbf{\hspace{0.3cm}Type\hspace{4.4cm} Description}
 \newline \vspace{0.2cm}
 \begin{tabular}{| p{5cm} | p{10cm} | }
@@ -163,25 +166,6 @@ We use state diagram to describe every use-case. When analyzing the use cases we
 	 \textbf{Expected results} & The user is logged out\\ 
 	 \hline
 \end{tabular} % & \\ \hline
-
-
-
-
-\item
-\textbf{\hspace{0.3cm}Type\hspace{4.4cm} Description}
-\newline \vspace{0.2cm}
-\begin{tabular}{| p{5cm} | p{10cm} | }
-	\hline
-	 \textbf{Title} & \\ \hline
-	 \textbf{Objective} & \\ \hline
-	 \textbf{Pre-conditions} & \\ \hline
-	 \textbf{Steps} & \begin{enumerate} \item 1 \end{enumerate} \\ \hline
-	 \textbf{Post-conditions} & \\ \hline
-	 \textbf{Expected results} & \\ 
-	 \hline
-\end{tabular} % & \\ \hline
-
-
 
 
 \end{enumerate}
