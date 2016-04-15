@@ -1,0 +1,8 @@
+Expected results:
+1. outputs
+2. Changes to data and states
+3. Any other consequence of the test
+
+Post-conditions
+1. Observable results
+2. Final state of the system
