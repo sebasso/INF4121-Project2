@@ -103,12 +103,12 @@
 </tr>
 <tr>
 	<td>verifyText</td>
-	<td>css=div.top-cart-content</td>
+	<td>css=div.top-cart-content li:nth-child(1)</td>
 	<td>glob:*${prod1}*</td>
 </tr>
 <tr>
 	<td>verifyText</td>
-	<td>css=div.top-cart-content</td>
+	<td>css=div.top-cart-content li:nth-child(2)</td>
 	<td>glob:*${prod2}*</td>
 </tr>
 </tbody></table>
