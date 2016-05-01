@@ -26,7 +26,6 @@
 %post condition vs expected results: http://www.klaros-testmanagement.com/en/forum/-/message_boards/message/144168
 
 
-
 \begin{document}
 \maketitle % Insert the title, author and date
 
@@ -34,19 +33,20 @@
 \subsection{Test cases}
 We use state diagram to describe every use-case. When analyzing the use cases we assume that all the observable results relate to the demo store, and for that reason every time a user gets an email it's under Expected results instead of post-conditions.
 
-\begin{enumerate}%all manual test cases
-\item
-\begin{figure}[H]
+\begin{itemize}%all manual test cases
+\item[*]
+\begin{figure}[!htbp]
+\textbf{1.\newline}
 \centering
 \includegraphics[scale=0.7,keepaspectratio]{Images/CreateAccount.png}
 \caption{Create Account}
 \end{figure}
 
-\newpage
-\textbf{\hspace{0.3cm}Type\hspace{4.4cm} Description}
-\newline \vspace{0.2cm}
+\begin{table}[!htbp]
+\small
 \begin{tabular}{| p{5cm} | p{10cm} | }
 	\hline
+	\textbf{Type} & \textbf{Description} \\ \hline
 	 Title & Create account\\ \hline
 	 Objective & To create a valid account that can be used for online shopping on \href{http://demo.avactis.com/4.7.9/}{\textbf{this site}.} \\ \hline
 	 Pre-conditions & User has Email\\ \hline
@@ -55,19 +55,23 @@ We use state diagram to describe every use-case. When analyzing the use cases we
 	 Expected results & \begin{enumerate} \item User registered in avactis user database. \item User gets a verification email \item User is now logged in \end{enumerate}\\ 
 	 \hline
 \end{tabular} % & \\ \hline
+\end{table}
 
-\item
-\begin{figure}[H]
+\item[*]
+\begin{figure}[!htbp]
+\textbf{2.\newline}
 \centering
 \includegraphics[scale=0.7,keepaspectratio]{Images/Login.png}
 \caption{Login}
 \end{figure}
 
 
-\textbf{\hspace{0.3cm}Type\hspace{4.4cm} Description}
-\newline \vspace{0.2cm}
+
+\begin{table}[!htbp]
+\small
 \begin{tabular}{| p{5cm} | p{10cm} | }
 	\hline
+	\textbf{Type} & \textbf{Description} \\ \hline
 	 \textbf{Title} & Logging in\\ \hline
 	 \textbf{Objective} & To verify that a user is registered by logging in\\ \hline
 	 \textbf{Pre-conditions} & The user has a valid account\\ \hline
@@ -76,20 +80,21 @@ We use state diagram to describe every use-case. When analyzing the use cases we
 	 \textbf{Expected results} & The user has an active session  \\ 
 	 \hline
 \end{tabular} % & \\ \hline
+\end{table}
 
-
-\item
-\begin{figure}[H]
+\item[*]
+\begin{figure}[!htbp]
+\textbf{3.\newline}
 \centering
 \includegraphics[scale=0.7,keepaspectratio]{Images/ResetPassword.png}
 \caption{Reset Password}
 \end{figure}
 
-\newpage
-\textbf{\hspace{0.3cm}Type\hspace{4.4cm} Description}
-\newline \vspace{0.2cm}
+\begin{table}[!htbp]
+\small
 \begin{tabular}{| p{5cm} | p{10cm} | }
 	\hline
+	\textbf{Type} & \textbf{Description} \\ \hline
 	 \textbf{Title} & Reset Password\\ \hline
 	 \textbf{Objective} & To change or alter you password\\ \hline
 	 \textbf{Pre-conditions} & A user account on avactis website\\ \hline
@@ -98,19 +103,23 @@ We use state diagram to describe every use-case. When analyzing the use cases we
 	 \textbf{Expected results} & \begin{enumerate} \item User gets email with link to change password. \item User has a active session after entering new password \end{enumerate} \\ 
 	 \hline
 \end{tabular} % & \\ \hline
+\end{table}
 
 %\begin{enumerate} \end{enumerate}
-\item
-\begin{figure}[H]
+\item[*]
+\begin{figure}[!htbp]
+\textbf{4.\newline}
 \centering
 \includegraphics[scale=0.7,keepaspectratio]{Images/SelectProducts.png}
 \caption{Select Products}
 \end{figure}
 
-\textbf{\hspace{0.3cm}Type\hspace{4.4cm} Description}
-\newline \vspace{0.2cm}
+
+\begin{table}[!htbp]
+\small
 \begin{tabular}{| p{5cm} | p{10cm} | }
 	\hline
+	\textbf{Type} & \textbf{Description} \\ \hline
 	 \textbf{Title} & Select Products \\ \hline
 	 \textbf{Objective} & Put different products in the cart and manage the quantity of each item \\ \hline
 	 \textbf{Pre-conditions} & User has avactis account \\ \hline
@@ -120,44 +129,48 @@ We use state diagram to describe every use-case. When analyzing the use cases we
 	 \textbf{Expected results} & Cart contains products \\ 
 	 \hline
 \end{tabular} % & \\ \hline
+\end{table}
 
 
-
-\item % basically this test case and diagram shall cover 3-5
-\begin{figure}[H]
+\item[*] % basically this test case and diagram shall cover 3-5
+\begin{figure}[!htbp]
+\textbf{5.\newline}
 \centering
 \includegraphics[scale=0.60,keepaspectratio]{Images/BuyProductsandChangeCart.png}
 \caption{Manage shopping cart, change quantity and place order}
 \end{figure}
 
-\newpage
-\textbf{\hspace{0.3cm}Type\hspace{4.4cm} Description}
-\newline \vspace{0.2cm}
+\begin{table}[!htbp]
+\small
 \begin{tabular}{| p{5cm} | p{10cm} | }
 	\hline
+	\textbf{Type} & \textbf{Description} \\ \hline
 	 \textbf{Title} & Shopping cart management, Checkout, products quantity, add/remove items and purchasing \\ \hline
 	 \textbf{Objective} & Test that the cart indeed contains the chosen products after shopping session \\ \hline
 	 \textbf{Pre-conditions} & Avactis user account and a cart of products \\ \hline
-	 \textbf{Steps} & \begin{enumerate} \item Click View cart \item Change items quantity \item Click checkout \item Fill in Billing \& shipping address and click continue checkout \item Select Billing and delivery options \item Click place order
+	 \textbf{Steps} & \begin{enumerate} \item Click View cart \item Change items quantity \item Add/remove product(s) \item a Click checkout \item Fill in Billing \& shipping address and click continue checkout \item Select Billing and delivery options \item Click place order
 	 \end{enumerate} \\ \hline
 	\textbf{Post-conditions} & \begin{enumerate}\item Item and price counter changes \item Website states goes to order confirmation page \item Webpage with following message: \textit{Your order is placed. Order ID: \#00001 Order details have been sent to your e-mail address.}  \end{enumerate} \\ \hline
 	 \textbf{Expected results} & \begin{enumerate}\item Users gets order confirmation mail \item Cart is empty \item Item and money counter is zero initialized \end{enumerate}\\ 
 	 \hline
 \end{tabular} % & \\ \hline
-
+\end{table}
 %TODO: Include x button right from shopping draw menu in cart "menu"
 
-\item
-\begin{figure}[H]
+\item[*]
+\begin{figure}[!htbp]
+\textbf{6.\newline}
 \centering
 \includegraphics[scale=0.6,keepaspectratio]{Images/Logout.png}
 \caption{Logout}
 \end{figure}
 
-\textbf{\hspace{0.3cm}Type\hspace{4.4cm} Description}
-\newline \vspace{0.2cm}
+
+\begin{table}[!htbp]
+\small
 \begin{tabular}{| p{5cm} | p{10cm} | }
 	\hline
+	\textbf{Type} & \textbf{Description} \\ \hline
 	 \textbf{Title} & Logout \\ \hline
 	 \textbf{Objective} & To log out of Avactis webstore \\ \hline
 	 \textbf{Pre-conditions} & A user account \\ \hline
@@ -166,10 +179,12 @@ We use state diagram to describe every use-case. When analyzing the use cases we
 	 \textbf{Expected results} & The user is logged out\\ 
 	 \hline
 \end{tabular} % & \\ \hline
+\end{table}
 
 
-\end{enumerate}
+\end{itemize}
 
+\newpage
 \subsection{Error Report}
 CSS module fails to load. We used \href{http://www.uio.no/studier/emner/matnat/ifi/INF3121/v16/resources/1-lectures/l05.pdf}{this} report and left out those field which didn't apply for us.
 
@@ -179,6 +194,8 @@ CSS module fails to load. We used \href{http://www.uio.no/studier/emner/matnat/i
 
 
 \begin{center}
+\begin{table}[!htbp]
+\small
 \begin{tabular}{| p{3.8cm} | p{5cm} | p{3.4cm} | p{4cm} |}
 	\hline
 	 \textbf{Date:} & \date{\today} & \textbf{Project:} & \textit{INF3121 Project2}\\ \hline
@@ -193,6 +210,7 @@ CSS module fails to load. We used \href{http://www.uio.no/studier/emner/matnat/i
 	 \textbf{Assigned to:} & \multicolumn{3}{| p{10cm} |}{\textit{Raluca Florea - University Of Oslo}} \\
 	 \hline
 \end{tabular} 
+\end{table}
 \end{center}
 %\textbf{} & \textit{} & \textbf{} & \textit{} \\ \hline
 \pagebreak
