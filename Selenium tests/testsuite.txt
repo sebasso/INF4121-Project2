@@ -10,9 +10,9 @@
 <tr><td><b>Test Suite</b></td></tr>
 <tr><td><a href="registeraccount.txt">registeraccount</a></td></tr>
 <tr><td><a href="forgottenpassword.txt">forgottenpassword</a></td></tr>
-<tr><td><a href="changepassword.txt">changepassword</a></td></tr>
 <tr><td><a href="loginfail.txt">loginfail</a></td></tr>
 <tr><td><a href="logintest.txt">logintest</a></td></tr>
+<tr><td><a href="changepassword.txt">changepassword</a></td></tr>
 <tr><td><a href="selectproduct.txt">selectproduct</a></td></tr>
 <tr><td><a href="changeamount.txt">changeamount</a></td></tr>
 <tr><td><a href="checkout.txt">checkout</a></td></tr>
