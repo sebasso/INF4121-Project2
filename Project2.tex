@@ -218,12 +218,29 @@ CSS module fails to load. We used \href{http://www.uio.no/studier/emner/matnat/i
 \subsection{About the ordering of the tests}
 The order of the test is described in this dependancy graph:
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
 	\centering
 	\includegraphics[scale=0.6,keepaspectratio]{Images/dependancygraph.png}
 	\caption{Dependancy graph}
 \end{figure}
 
 This shows that the way we have set up the tests, some ordering is absolute. I.e. to ensure that we are logging into an account with a wrong password, there need to exist an account where we know the correct password. The same goes for forgotten password. When it comes to checkout, this can be done without logging in, but we have designed the tests with a logged in user in mind, so that the customer info is fetched automatically. The result is the dependancy graph shown above, where arrow in means that it's dependant on the test the arrow originates from, while arrow out signals another test is dependant on it.
+
+
+\href{https://github.com/sebasso/INF4121-Project2}{\textbf{Github Link}.}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.7,keepaspectratio]{Images/Selenium-screenshot.png}
+	\caption{Selenium Screenshot}
+\end{figure}
+
+
+\section{Requirement 3}
+Total coverage.
+
+BUT we couldnt record the following:
+
+
 
 \end{document}
