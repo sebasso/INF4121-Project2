@@ -39,7 +39,7 @@
 <tr>
 	<td>click</td>
 	<td>name=shippingModuleAndMethod[method_code]</td>
-	<td></td>
+	<td>BCE5D24D-666C-43CA-94A0-D6F775903BE2_1</td>
 </tr>
 <tr>
 	<td>click</td>
