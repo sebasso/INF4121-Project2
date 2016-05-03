@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://demo.avactis.com/" />
+<title>Checkout</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">Checkout</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/4.7.9/index.php</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Checkout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>name=checkbox_shipping_same_as_billing</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div#step1 input.btn.btn-primary.button_continue_checkout</td>
+	<td>Continue Checkout</td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>//div[@id=&quot;step2&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>name=shippingModuleAndMethod[method_code]</td>
+	<td>BCE5D24D-666C-43CA-94A0-D6F775903BE2_1</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//input[@onclick='submitStep(2);']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>//div[@id=&quot;step3&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//input[@value='Place Order']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>4000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=div.note.note-success.note-bordered</td>
+	<td>glob:Your order is placed. Order ID: #*</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=a.top-cart-info-count</td>
+	<td>0 items</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=a.top-cart-info-value</td>
+	<td>$0.00</td>
+</tr>
+</tbody></table>
+</body>
+</html>
