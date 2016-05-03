@@ -10,6 +10,7 @@
 \usepackage{tabulary}
 \usepackage{verbatim}
 \usepackage{listings}
+
 %\usepackage{bookmark} %also loads package{hyperref}
 %removes: Package rerunfile check Warning: File `Essay.out' has changed.
 \usepackage{bookmark}
@@ -199,7 +200,7 @@ CSS module fails to load. We used \href{http://www.uio.no/studier/emner/matnat/i
 \begin{tabular}{| p{3.8cm} | p{5cm} | p{3.4cm} | p{4cm} |}
 	\hline
 	 \textbf{Date:} & \date{\today} & \textbf{Project:} & \textit{INF3121 Project2}\\ \hline
-	 \textbf{Programmer:} & \textit{Sebastian Søberg} & \textbf{Tester:} & \textit{Sebastian Søberg} \\ \hline
+	 \multicolumn{1}{| p{5cm} |}{\textbf{Tester:}} & \multicolumn{3}{| p{5cm} |}{\textit{Sebastian Søberg}} \\ \hline
 	 \textbf{Program/Module:} & \textit{\href{http://demo.avactis.com/4.7.9/index.php}{Avactis Demo webstore}} & \textbf{Build/Release:} & \textit{4.7.9} \\ \hline
 	 \multicolumn{1}{| p{5cm} |}{\textbf{Software enviroment:}} & \multicolumn{3}{| p{10cm} |}{\textit{\textbf{OS:} Mac OS X El Captian. \textbf{Browser:} Safari v9.1}}  \\ \hline
 	 \multicolumn{1}{| p{5cm} |}{\textbf{Hardware enviroment:}} & \multicolumn{3}{| p{10cm} |}{\textit{Model: Macbook air mid 2012, RAM: 4gb, CPU: 1,8 GHz Intel Core i5, Graphics: Intel HD Graphics 4000 1536 MB}}  \\ \hline
@@ -224,7 +225,7 @@ The order of the test is described in this dependancy graph:
 	\caption{Dependancy graph}
 \end{figure}
 
-This shows that the way we have set up the tests, some ordering is absolute. I.e. to ensure that we are logging into an account with a wrong password, there need to exist an account where we know the correct password. The same goes for forgotten password. When it comes to checkout, this can be done without logging in, but we have designed the tests with a logged in user in mind, so that the customer info is fetched automatically. The result is the dependancy graph shown above, where arrow in means that it's dependant on the test the arrow originates from, while arrow out signals another test is dependant on it. Also, even though all the tests have listed email under expected results, and not post conditions, checking for email and handling it through Selenium proved to be excellent practice.
+This shows that the way we have set up the tests, some ordering is absolute. I.e. to ensure that we are logging into an account with a wrong password, there need to exist an account where we know the correct password. The same goes for forgotten password. When it comes to checkout, this can be done without logging in, but we have designed the tests with a logged in user in mind, so that the customer info is fetched automatically. This make sense since the use-cases does not specifiy a user to be logged in or out whilst proceeding to checkout. The result is the dependancy graph shown above, where each arrow represent a dependency on the test the arrow originates from, while arrow out signals another test is dependant on it. Also, even though all the tests have listed email under expected results, and not post conditions, checking for email and handling it through Selenium proved to be excellent practice.
 
 \begin{figure}[H]
 	\centering
@@ -260,9 +261,9 @@ We had Total coverage of every manual test in our automated testing suite, as sh
 \begin{itemize}
 	\item For all tests
 	\begin{itemize}
-		\item Added various verify-commands, to verify that the steps were successful
+		\item We added various verify-commands, to verify that the steps were successful
 		\item Some verify-commands have a glob:text*, where the glob: and * enables wildcard verification.
-		\item Added various pause commands, as Selenium was unable to correctly wait for a page to load on its own.
+		\item We added various pause commands, as Selenium was unable to correctly wait for a page to load on its own.
 	\end{itemize}
 	\item Register account
 	\begin{itemize}
@@ -270,12 +271,12 @@ We had Total coverage of every manual test in our automated testing suite, as sh
 	\end{itemize}
 	\item Forgotten password
 	\begin{itemize}
-		\item Changed from clicking the link in the email, to copying and opening it. This is works around the problem with popup possibly being blocked in the browser.
+		\item We changed from clicking the link in the email, to copying and opening it. This is works around the problem with popup possibly being blocked in the browser.
 	\end{itemize}
 	\item Select product
 	\begin{itemize}
 		\item Target for first and second "click" had to be customized, as they ended up being too general via recording.
-		\item Had to use refreshAndWait to ensure that the cart was updated.
+		\item Had to use refreshAndWait() to ensure that the cart was updated.
 	\end{itemize}
 	\item Change amount and delete
 	\begin{itemize}
@@ -283,11 +284,11 @@ We had Total coverage of every manual test in our automated testing suite, as sh
 	\end{itemize}
 	\item Checkout
 	\begin{itemize}
-		\item Added waitForVisible, since all other wait-commands ended the waiting time too early.
+		\item We added waitForVisible(), since all other wait-commands ended the waiting time too early.
 	\end{itemize}
 \end{itemize}
 
-Other problems were mostly related to the site itself. One big issue was that the site suddenly started timing out/aborting requests, which was most notable in the registration process; Selenium would fill out all the fields with username, password, name etc, then when Selenium clicked Register, the browser would say that the request was aborted or had timed out. Sometimes this would happen all the time when running the tests, sometimes it would happen when I clicked, and sometimes it would happen every other testrun.\newline\newline
-When it comes to selecting product and checkout, the site wouldn't directly time out, but it seems like the page would ignore the action taken, e.g. the product would not be put in the basket, or the checkout would not continue to the next step. Some of these were remedied with pause, while others seemingly disappeared by themself. Thus, we ended with a test suite that has all the manual tests automated, with all tests green.
+Other problems were mostly related to the site itself. One big issue was that the site suddenly started timing out/aborting requests, which was most notable in the registration process. Selenium would fill out all the fields with username, password, name etc, then when Selenium clicked Register, the browser would say that the request was aborted or had timed out. Sometimes this would happen all the time when running the tests, sometimes it would happen when I clicked, and sometimes it would happend every other testrun.\newline
+\newline When it comes to selecting product and checkout, the site wouldn't directly time out, but it seemed like the page would ignore the action taken, e.g. the product would not be put in the basket, or the checkout would not continue to the next step. Some of these were remedied with pause, while others seemingly disappeared by themself. Thus, we ended with a test suite that has all the manual tests automated, with \textit{all} tests green.
 
 \end{document}
