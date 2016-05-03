@@ -8,14 +8,14 @@
 <body>
 <table id="suiteTable" cellpadding="1" cellspacing="1" border="1" class="selenium"><tbody>
 <tr><td><b>Test Suite</b></td></tr>
-<tr><td><a href="registeraccount.txt">registeraccount</a></td></tr>
-<tr><td><a href="forgottenpassword.txt">forgottenpassword</a></td></tr>
-<tr><td><a href="loginfail.txt">loginfail</a></td></tr>
-<tr><td><a href="logintest.txt">logintest</a></td></tr>
-<tr><td><a href="changepassword.txt">changepassword</a></td></tr>
-<tr><td><a href="selectproduct.txt">selectproduct</a></td></tr>
-<tr><td><a href="changeamount.txt">changeamount</a></td></tr>
-<tr><td><a href="checkout.txt">checkout</a></td></tr>
+<tr><td><a href="registeraccount.txt">Register account</a></td></tr>
+<tr><td><a href="forgottenpassword.txt">Forgotten password</a></td></tr>
+<tr><td><a href="loginfail.txt">Login wrong</a></td></tr>
+<tr><td><a href="logintest.txt">Login correct</a></td></tr>
+<tr><td><a href="changepassword.txt">Change password</a></td></tr>
+<tr><td><a href="selectproduct.txt">Select product</a></td></tr>
+<tr><td><a href="changeamountanddelete.txt">Change amount and delete</a></td></tr>
+<tr><td><a href="checkout.txt">Checkout</a></td></tr>
 </tbody></table>
 </body>
 </html>

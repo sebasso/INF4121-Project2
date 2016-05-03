@@ -224,21 +224,67 @@ The order of the test is described in this dependancy graph:
 	\caption{Dependancy graph}
 \end{figure}
 
-This shows that the way we have set up the tests, some ordering is absolute. I.e. to ensure that we are logging into an account with a wrong password, there need to exist an account where we know the correct password. The same goes for forgotten password. When it comes to checkout, this can be done without logging in, but we have designed the tests with a logged in user in mind, so that the customer info is fetched automatically. The result is the dependancy graph shown above, where arrow in means that it's dependant on the test the arrow originates from, while arrow out signals another test is dependant on it.
+This shows that the way we have set up the tests, some ordering is absolute. I.e. to ensure that we are logging into an account with a wrong password, there need to exist an account where we know the correct password. The same goes for forgotten password. When it comes to checkout, this can be done without logging in, but we have designed the tests with a logged in user in mind, so that the customer info is fetched automatically. The result is the dependancy graph shown above, where arrow in means that it's dependant on the test the arrow originates from, while arrow out signals another test is dependant on it. Also, even though all the tests have listed email under expected results, and not post conditions, checking for email and handling it through Selenium proved to be excellent practice.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.305,keepaspectratio]{Images/Selenium-screenshot2.png}
+	\caption{Selenium Execution Results\newline NB: \textit{As seen in the picture this taken when every test is passed and marked in green. Ergo it works correctly}}
+\end{figure}
 
 \vspace{0.5cm}
 \href{https://github.com/sebasso/INF4121-Project2}{\textbf{\Large{Github Link}}}
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[scale=0.7,keepaspectratio]{Images/Selenium-screenshot.png}
-	\caption{Selenium Execution Results\newline NB: \textit{As seen in the picture this taken when every test is passed and marked in green. Ergo it works correctly}}
-\end{figure}
-
 
 \section{Requirement 3}
-We had Total coverage of every manual test in our automated testing suite. However we couldn't do this with only bare-bone recording. We needed to manually configure the following tests:
-
-
+We had Total coverage of every manual test in our automated testing suite, as shown in the following Traceability Matrix:
+\begin{table}[!htbp]
+	\small
+%	\begin{tabular}{| p{5cm} | p{10cm} | }
+	\begin{tabular}{| l | c | c | c | c | c | c |}
+		\hline
+		\textbf{Automatic\textbackslash Manual} & M.T 1 & M.T 2 & M.T. 3 & M.T. 4 & M.T. 5 & M.T. 6 \\ \hline
+		\textbf{Register Account} & X & & & & & X \\ \hline
+		\textbf{Forgotten password} & & & X & & & X \\ \hline
+		\textbf{Login Fail} & & X & & & & \\ \hline
+		\textbf{Login test} & & X & & & & \\ \hline
+		\textbf{Change Password} & & & X & & & \\ \hline
+		\textbf{Select Product} & & & & X & & \\ \hline
+		\textbf{Change amount and delete} & & & & & X & \\ \hline
+		\textbf{Checkout} & & & & & X & \\ \hline
+		\hline
+	\end{tabular} % & \\ \hline
+\end{table}
+\newline
+ However we couldn't do this with only bare-bone recording. We needed to manually configure all of the tests, for different reasons. Here, I will name a few of them for each automatic test case:
+\begin{itemize}
+	\item For all tests
+	\begin{itemize}
+		\item Added various verify-commands, to verify that the steps were successful
+		\item Some verify-commands have a glob:text*, where the glob: and * enables wildcard verification.
+		\item Added various pause commands, as Selenium was unable to correctly wait for a page to load on its own.
+	\end{itemize}
+	\item Register account
+	\begin{itemize}
+		\item Added randomized username
+	\end{itemize}
+	\item Forgotten password
+	\begin{itemize}
+		\item Changed from clicking the link in the email, to copying and opening it. This is works around the problem with popup possibly being blocked in the browser.
+	\end{itemize}
+	\item Select product
+	\begin{itemize}
+		\item Target for first and second "click" had to be customized, as they ended up being too general via recording.
+		\item Had to use refreshAndWait to ensure that the cart was updated.
+	\end{itemize}
+	\item Change amount and delete
+	\begin{itemize}
+		\item Had to manually set the targets for store, click and verifyNotText, to make them accurate enough.
+	\end{itemize}
+	\item Checkout
+	\begin{itemize}
+		\item Added waitForVisible, since all other wait-commands ended the waiting time too early.
+	\end{itemize}
+\end{itemize}
 
 \end{document}
