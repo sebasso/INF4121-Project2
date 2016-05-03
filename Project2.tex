@@ -287,4 +287,7 @@ We had Total coverage of every manual test in our automated testing suite, as sh
 	\end{itemize}
 \end{itemize}
 
+Other problems were mostly related to the site itself. One big issue was that the site suddenly started timing out/aborting requests, which was most notable in the registration process; Selenium would fill out all the fields with username, password, name etc, then when Selenium clicked Register, the browser would say that the request was aborted or had timed out. Sometimes this would happen all the time when running the tests, sometimes it would happen when I clicked, and sometimes it would happen every other testrun.\newline\newline
+When it comes to selecting product and checkout, the site wouldn't directly time out, but it seems like the page would ignore the action taken, e.g. the product would not be put in the basket, or the checkout would not continue to the next step. Some of these were remedied with pause, while others seemingly disappeared by themself. Thus, we ended with a test suite that has all the manual tests automated, with all tests green.
+
 \end{document}
